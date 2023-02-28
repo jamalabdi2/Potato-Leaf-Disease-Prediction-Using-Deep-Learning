@@ -26,43 +26,7 @@ The following libraries are required to run the notebook:
 8. scikit-learn
 9. keras
 
-You can install them using the following command:
-`pip install opendatasets split-folders numpy pandas tensorflow matplotlib seaborn scikit-learn keras
-`
-# Installing
-`
-You can download the dataset using the following code:
-dataset_url = 'https://www.kaggle.com/datasets/arjuntejaswi/plant-village'
-import opendatasets
-opendatasets.download(dataset_url)
-`
-Then, filter the dataset to get only potato data:
-`
-import shutil
-import os
-BASE_DIR = os.getcwd()
-main_dir = '/content/plant-village/PlantVillage'
-directories = os.listdir('/content/plant-village/PlantVillage')
-
-dir_to_remove = []
-for directory in directories:
-  if not directory.startswith('Potato'):
-    dir_to_remove.append(directory)
-
-for dir in dir_to_remove:
-  fullpath = os.path.join(main_dir,dir)
-  shutil.rmtree(fullpath)
-
-`
-After that, split the dataset into training, validation, and testing sets using the following code:
-`import splitfolders
-splitfolders.ratio('/content/plant-village/PlantVillage',output='dataset',ratio =(.7,.1,.2) )
-
-`
-
-
-
-
+For more information please check the source code.
 
 
 
